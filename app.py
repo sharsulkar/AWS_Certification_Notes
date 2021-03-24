@@ -1,13 +1,15 @@
 from flask import Flask, request, url_for, redirect, render_template
 from flask_frozen import Freezer
 
-app = Flask(__name__) #name of the flask application
-
+app = Flask(__name__,template_folder="content/html") #name of the flask application
+app.config['FREEZER_DESTINATION'] = 'docs'
+app.config['FREEZER_STATIC_IGNORE']='*'
 freezer = Freezer(app)
+
 
 @app.route('/')
 def home(): 
-    return render_template('base.html')
+    return render_template('template_base.html')
 
 @app.route('/sample_post.html')
 def sample_post(): 
