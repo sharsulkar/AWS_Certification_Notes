@@ -1,0 +1,250 @@
+{% extends './templates/blog_page.html' %}
+
+{% block toc_header %}
+Full Stack Documentation
+{% endblock %}
+
+{% block toc %}
+<div class="toc">
+<ul>
+              <!--enter toc here-->
+              <a class="nav-link" href="#Introduction" rel="internal">
+                <li>Introduction</li>
+              </a>
+              <a class="nav-link" href="#Modern_Application_Architecture" rel="internal">
+                <li>Modern Application Architecture</li>
+              </a>
+              <a class="nav-link" href="#System_Parts" rel="internal">
+                <li>System Parts</li>
+              </a>
+              <a class="nav-link" href="#Modern_JavaScript" rel="internal">
+                <li>Modern JavaScript</li>
+              </a>
+              <a class="nav-link" href="#ES6_ECMAScript" rel="internal">
+                <li>ES6 ECMAScript</li>
+              </a>
+              <a class="nav-link" href="#Front_End_framework" rel="internal">
+                <li id="gras">Front End framework</li>
+              </a>
+              <a class="nav-link" href="#View_JS" rel="internal">
+                <li>View JS</li>
+              </a>
+              <a class="nav-link" href="#React" rel="internal">
+                <li>React</li>
+              </a>
+              <a class="nav-link" href="#D3" rel="internal">
+                <li>D3</li>
+              </a>
+              <a class="nav-link" href="#Back_End_framework" rel="internal">
+                <li id="gras">Back End framework</li>
+              </a>
+              <a class="nav-link" href="#Node_js" rel="internal">
+                <li>Node js</li>
+              </a>
+              <a class="nav-link" href="#Express" rel="internal">
+                <li>Express</li>
+              </a>
+              <a class="nav-link" href="#Passport" rel="internal">
+                <li>Passport</li>
+              </a>
+              <a class="nav-link" href="#MongoDB" rel="internal">
+                <li>MongoDB</li>
+              </a>
+              <a class="nav-link" href="#Redis" rel="internal">
+                <li>Redis</li>
+              </a>
+              <a class="nav-link" href="#Reference" rel="internal">
+                <li>Reference</li>
+              </a>
+              <!--toc ends here-->
+            </ul>
+        </div>
+{% endblock %}
+
+{% block page_header %}
+Introduction
+{% endblock %}
+
+{% block first_publish_date %}
+01-Jan-2021
+{% endblock %}
+
+{% block last_update_date %}
+01-Jan-2021
+{% endblock %}
+
+{% block page_content %}
+<article>
+                <h4><b>Definition</b></h4>
+                <p>The <u>industry definition</u><span>Industry definition is the definition of industry</span> of a Full Stack Developer is an engineer who can work on different levels of an application stack. The term stack refers to the combination of components and tools that make up the application. The components could be in the front-end or the back-end of the system.</p>
+                <p>The main objective of full stack engineer is to keep every part of the system running smoothly. A Full Stack Developer can performs tasks ranging from resizing an image or text in a webpage to patching the kernel.</p>
+                </artice>
+            </section>
+            <section class="main-section" id="Modern_Application_Architecture">
+              <header>Modern Application Architecture</header>
+              <article>
+                <p>Modern applications are developed to be installed on mobile devices or hosted on the web. This is a result of trends in faster internet speeds, greater web access and penetration, and the development of more powerful mobile devices. This has created the need to rethink application development. Instead of an isolated desktop or mobile application, modern applications have a distributed back-end infrastructure interactively serving a variety of front-end clients over the web.</p>
+                </artice>
+            </section>
+            <section class="main-section" id="System_Parts">
+              <header>System Parts</header>
+              <article>
+                <ul>
+                  <li>
+                    <dl>
+                      <dt>Back-End</dt>
+                      <dd>
+                        <ul>
+                          <li>Operating System (OS)</li>
+                          <li>Firewall</li>
+                          <li>Web server</li>
+                          <li>Database (SQL or NoSQL)</li>
+                          <li>Caches</li>
+                          <li>Message queuing software</li>
+                          <li>Application</li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  <li>
+                    <dl>
+                      <dt>Front-End</dt>
+                      <dd>
+                        <ul>
+                          <li>HTML</li>
+                          <li>CSS</li>
+                          <li>JavaScript</li>
+                          <li>Dart</li>
+                        </ul>
+                      </dd>
+                    </dl>
+              </article>
+            </section>
+            <section class="main-section" id="Modern_JavaScript">
+              <header>Modern JavaScript</header>
+              <article>
+                <p>JavaScript has come a long way. It may have seemed like a “toy language” at first, butithas evolved into the powerful dominant scripting language of the Web. JavaScript is now found not only in the browser, but on the server, and it’s even moving into the world of hardware. Staying on top of the latest methodologies, tools, and techniques is critical for any JavaScript developer, whether you’re building single-page web apps with front-end frameworks or building a RESTful API in Node.js</p>
+                <p>To write JavaScript, open jsfiddle.net and write your first "Hello world" JavaScript code:</p>
+                <code>function hello(yourName) {
+                  alert("Hello " + yourName);
+                  }
+                  hello("World");
+                </code>
+                <p></p>
+              </article>
+            </section>
+            <section class="main-section" id="ES6_ECMAScript">
+              <header>ES6 ECMAScript</header>
+              <article>
+                <p>Evolution of the Javascript language.</p>
+                <p>ECMAScript 6 <br>
+                  <code>
+                    const PI = 3.141593 <br>
+                    PI > 3.0
+                  </code>
+                </p>
+                <p>ECMAScript 5 <br>
+                  <code>
+                    Object.defineProperty(typeof global === "object" ? global : window, "PI", { <br>
+                    value: 3.141593, <br>
+                    enumerable: true, <br>
+                    writable: false, <br>
+                    configurable: false <br>
+                    }) <br>
+                    PI > 3.0;
+                  </code>
+                </p>
+                <p></p>
+              </article>
+            </section>
+            <section class="main-section" id="Front_End_framework">
+              <header id="gras">Front End framework</header>
+              <p>We have seen the big shift in the web from HTML 4 to HTML5 which has built-in APIs to help you accomplish many tasks to built a richer web application. This has resulted in a variety of front-end MVC frameworks such as:</p>
+            </section>
+            <section class="main-section" id="View_JS">
+              <header>View JS</header>
+              <article>
+                <p>This open-source JavaScript framework was released in 2014, supporting an extremely simple API for developing the Reactive components for Modern Web Interfaces. Its design emphasized the ease of use. Like Ember, it uses the Model–view–viewmodel (MVVM) design paradigm which helpes in the simplification of the design.</p>
+                <p>The attractive feature in this framework is that you can use selective modules with it for your specific needs. For example, you need to write simple HTML code, grab the JSON and create a Vue instance to create the small effects that can reused!</p>
+                <p>Similar to previous JavaScript Frameworks, it uses two-way data binding to update the model and view, plus it also uses binder for communication between the view and data binder. This is not a full-blown Framework as it focuses entirely on the View Layer, so you would need to take care of other components on your own.</p>
+                <p>If you are familiar with AngularJS, then you will feel at home here, as it heavily incorporates the architecture of AngularJS, so many projects can be easily transferred to this Framework if you know the basics of JavaScript.</p>
+                <p>I would highly recommend this JavaScript Framework if you just want to get things done or gain JavaScript programming experience, or if you need to learn the nature of different JavaScript Frameworks.</p>
+              </article>
+            </section>
+            <section class="main-section" id="React">
+              <header>React</header>
+              <article>
+                <p>Similar to AngularJS, React is also an MVC (Model-View-Controller) type framework, however, it focuses entirely on the View components (as it was specifically designed for the UI) and can be seamlessly integrated with any architecture. This means you can use it right away for your websites!</p>
+                <p>It abstracts the DOM programming interface (and thus uses the virtual DOM) from the core functionality, so you get extremely fast rendering of the UI, which enables you to use it from node.js as a client-side framework. It was developed as an open-source project by Facebook with various contributions from other people.</p>
+                <p>If you have seen and like Facebook and Instagram’s interfaces, then you will love React. Through React, you can design simple views for each state in your application, and when the data changes, then it updates automatically. Any kind of complex UIs can be created, which can be reused in whatever applications you want. For the servers, React also supports rendering using node.js. React is flexible enough to use with other interfaces.</p>
+                <p>Apart from Facebook and Instagram, there are several companies that use React, including Whatsapp, BBC, PayPal, Netflix, Dropbox, etc.</p>
+              </article>
+            </section>
+            <section class="main-section" id="D3">
+              <header>D3</header>
+              <article>
+                <p>D3 (or D3.js) is a JavaScript library for visualizing data using web standards. D3 helps you bring data to life using SVG, Canvas and HTML. D3 combines powerful visualization and interaction techniques with a data-driven approach to DOM manipulation, giving you the full capabilities of modern browsers and the freedom to design the right visual interface for your data.</p>
+              </article>
+            </section>
+            <section class="main-section" id="Back_End_framework">
+              <header id="gras">Back End framework</header>
+              <article>
+                <p>The primary function of back-end JavaScript frameworks is to provide RESTful API services. This requirement generally includes the majority of an app’s non-UI functions such as database modification, image storage and access authentication.</p>
+              </article>
+            </section>
+            <section class="main-section" id="Node_js">
+              <header>Node js</header>
+              <article>
+                <p>The primary function of back-end JavaScript frameworks is to provide RESTful API services. This requirement generally includes the majority of an app’s non-UI functions such as database modification, image storage and access authentication.</p>
+                <p>Node.js enables JavaScript to be used for server-side scripting, and runs scripts server-side to produce dynamic web page content before the page is sent to the user's web browser. Consequently, Node.js has become one of the foundational elements of the "JavaScript everywhere" paradigm, allowing web application development to unify around a single programming language, rather than rely on a different language for writing server side scripts.</p>
+              </article>
+            </section>
+            <section class="main-section" id="Express">
+              <header>Express</header>
+              <article>
+                <p>Express.js, or simply Express, is a web application framework for Node.js, released as free and open-source software under the MIT License. It is designed for building web applications and APIs. It is the de facto standard server framework for Node.js.</p>
+                <code>npm install -s</code>
+                <p></p>
+                <code> var express = require('express')<br>
+                  var app = express()<br>
+                  app.get('/', function (req, res) {<br>
+                  res.send('Hello World')<br>
+                  })<br>
+                  app.listen(3000)
+                </code>
+                <p></p>
+              </article>
+            </section>
+            <section class="main-section" id="Passport">
+              <header>Passport</header>
+              <article>
+                <p>Passport is authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based web application. A comprehensive set of strategies support authentication using a username and password, Facebook, Twitter, and more.</p>
+                <code>passport.authenticate('twitter');('facebook');('google');('linkedin');('github');</code>
+                <p></p>
+              </article>
+            </section>
+            <section class="main-section" id="MongoDB">
+              <header>MongoDB</header>
+              <article>
+                <p>MongoDB (from humongous) is a free and open-source cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with schemas. MongoDB is developed by MongoDB Inc. and is free and open-source, published under a combination of the GNU Affero General Public License and the Apache License.</p>
+                <p>The software company 10gen began developing MongoDB in 2007 as a component of a planned platform as a service product. In 2009, the company shifted to an open source development model, with the company offering commercial support and other services. In 2013, 10gen changed its name to MongoDB Inc.</p>
+                <p>MongoDB supports field, range queries, regular expression searches. Queries can return specific fields of documents and also include user-defined JavaScript functions. Queries can also be configured to return a random sample of results of a given size.</p>
+              </article>
+            </section>
+            <section class="main-section" id="Redis">
+              <header>Redis</header>
+              <article>
+                <p>Redis is an in-memory database open-source software project sponsored by Redis Labs. It is networked, in-memory, and stores keys with optional durability.</p>
+                <p>The name Redis means REmote DIctionary Server. Salvatore Sanfilippo, the original developer of Redis, was hired by VMware in March, 2010. In May, 2013, Redis was sponsored by Pivotal Software (a VMware spin-off). In June 2015, development became sponsored by Redis Labs.</p>
+                <p>According to monthly rankings by DB-Engines.com, Redis is often ranked the most popular key-value database. Redis has also been ranked the #4 NoSQL database in user satisfaction and market presence based on user reviews, the most popular NoSQL database in containers, and the #1 NoSQL database among Top 50 Developer Tools & Services.</p>
+                <p>Redis maps keys to types of values. An important difference between Redis and other structured storage systems is that Redis supports not only strings, but also abstract data types:
+                <ul>
+                  <li>Lists of strings</li>
+                  <li>Sets of strings (collections of non-repeating unsorted elements)</li>
+                  <li>Sorted sets of strings (collections of non-repeating elements ordered by a floating-point number called score)</li>
+                  <li>Hash tables where keys and values are strings</li>
+                  <li>HyperLogLogs used for approximated set cardinality size estimation.</li>
+                  <li>Geospatial data through the implementation of the geohash technique since Redis 3.2.</li>
+                </ul>
+                </p>
+              </article>
+{% endblock %}

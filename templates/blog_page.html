@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block page_content %}
+    <div class="col-sm-3 col-lg-2">
+        <nav class="navbar navbar-default navbar-fixed-side">
+          <!-- normal collapsable navbar markup -->
+          <nav id="navbar">
+            <!--enter toc header here-->
+            <header>{% block toc_header %}{% endblock %}</header>
+            {% block toc %}{% endblock %}
+          </nav>
+        </nav>
+    </div>
+    <div class="col-sm-9 col-lg-10">
+        <div class="container_body">
+         
+          <main id="main-doc">
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+             <!-- your page content -->
+            <section class="main-section">
+              <header>{% block page_header %}{% endblock %}</header>
+              <div id="published_date">First published on {% block first_publish_date %}{% endblock %}</div>
+              <div id="last_update_date">Last updated on {% block last_update_date %}{% endblock %}</div>
+              <div id="read_time">read time: </div>
+              {% block page_content %}{% endblock %}
+            </section>
+            
+          </main>
+        </div>
+    </div>
+
+{% endblock %}
