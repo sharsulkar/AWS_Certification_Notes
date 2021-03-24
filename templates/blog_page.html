@@ -17,11 +17,11 @@
             <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
              <!-- your page content -->
             <section class="main-section">
-              <header>{% block page_header %}{% endblock %}</header>
+              <header>{% block header %}{% endblock %}</header>
               <div id="published_date">First published on {% block first_publish_date %}{% endblock %}</div>
               <div id="last_update_date">Last updated on {% block last_update_date %}{% endblock %}</div>
               <div id="read_time">read time: </div>
-              {% block page_content %}{% endblock %}
+              {% block content %}{% endblock %}
             </section>
             
           </main>

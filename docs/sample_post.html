@@ -1,10 +1,67 @@
-{% extends './templates/blog_page.html' %}
+<html>
 
-{% block toc_header %}
+<head>
+  <meta charset="utf-8">
+  <title>AWS Certification Notes</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./static/css/styles.css">
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <!--header starts here-->
+        <div class="container_header">
+
+          <h1>AWS Certification Notes</h1>
+
+          <!--Menu starts here-->
+          <h3 onclick="document.getElementsByTagName('nav')[0].className = 'menu menu_active'">&lt;menu/&gt;</h3>
+          <nav class="menu">
+            <p onclick="document.getElementsByTagName('nav')[0].className = 'menu'">&lt;close/&gt;</p>
+            <ol>
+              <li class="menu-item"><a href="#0">Home</a></li>
+              <li class="menu-item"><a href="#0">About</a></li>
+              <li class="menu-item">
+                <a href="#0">Blog Posts</a>
+                <ol class="sub-menu">
+                  <li class="menu-item"><a href="#0">Topic 1</a></li>
+                  <li class="menu-item"><a href="#0">Topic 2</a></li>
+                  <li class="menu-item"><a href="#0">Topic 3</a></li>
+                </ol>
+              </li>
+              <li class="menu-item">
+                <a href="#0">Web Apps</a>
+                <ol class="sub-menu">
+                  <li class="menu-item"><a href="#0">Webapp1</a></li>
+                  <li class="menu-item"><a href="#0">Webapp2</a></li>
+                  <li class="menu-item"><a href="#0">Webapp3</a></li>
+                </ol>
+              </li>
+              <li class="menu-item"><a href="#0">Contact</a></li>
+            </ol>
+          </nav>
+          <!--Menu ends here-->
+
+        </div>
+      </div>
+    </div>
+
+    <!--header ends here-->
+
+    <div class="row">
+        
+    <div class="col-sm-3 col-lg-2">
+        <nav class="navbar navbar-default navbar-fixed-side">
+          <!-- normal collapsable navbar markup -->
+          <nav id="navbar">
+            <!--enter toc header here-->
+            <header>
 Full Stack Documentation
-{% endblock %}
-
-{% block toc %}
+</header>
+            
 <div class="toc">
 <ul>
               <!--enter toc here-->
@@ -59,21 +116,28 @@ Full Stack Documentation
               <!--toc ends here-->
             </ul>
         </div>
-{% endblock %}
 
-{% block page_header %}
+          </nav>
+        </nav>
+    </div>
+    <div class="col-sm-9 col-lg-10">
+        <div class="container_body">
+         
+          <main id="main-doc">
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+             <!-- your page content -->
+            <section class="main-section">
+              <header>
 Introduction
-{% endblock %}
-
-{% block first_publish_date %}
+</header>
+              <div id="published_date">First published on 
 01-Jan-2021
-{% endblock %}
-
-{% block last_update_date %}
+</div>
+              <div id="last_update_date">Last updated on 
 01-Jan-2021
-{% endblock %}
-
-{% block page_content %}
+</div>
+              <div id="read_time">read time: </div>
+              
 <article>
                 <h4><b>Definition</b></h4>
                 <p>The <u>industry definition</u><span>Industry definition is the definition of industry</span> of a Full Stack Developer is an engineer who can work on different levels of an application stack. The term stack refers to the combination of components and tools that make up the application. The components could be in the front-end or the back-end of the system.</p>
@@ -247,4 +311,29 @@ Introduction
                 </ul>
                 </p>
               </article>
-{% endblock %}
+
+            </section>
+            
+          </main>
+        </div>
+    </div>
+
+
+     </div>
+    <!-- footer starts here-->
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="container_footer">
+          
+        </div>
+      </div>
+    </div>
+    <!-- footer ends here-->
+  </div>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="./static/js/script.js"></script>
+</body>
+
+</html>
