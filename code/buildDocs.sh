@@ -11,7 +11,7 @@ set -x
 ###################
  
 apt-get update
-apt-get -y install git
+apt-get -y install git python
  
 #####################
 # DECLARE VARIABLES #
