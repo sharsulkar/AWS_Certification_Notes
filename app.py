@@ -3,7 +3,7 @@ from flask_frozen import Freezer
 
 app = Flask(__name__,template_folder="content/html") #name of the flask application
 app.config['FREEZER_DESTINATION'] = 'docs'
-app.config['FREEZER_STATIC_IGNORE']='*'
+#app.config['FREEZER_STATIC_IGNORE']='*'
 freezer = Freezer(app)
 
 
