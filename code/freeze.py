@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 from flask_frozen import Freezer
 from app import app
 
