@@ -24,8 +24,9 @@ export SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)
 ##############
 # BUILD DOCS #
 ##############
+
  
-python app.py
+python .code/freeze.py
  
 #######################
 # Update GitHub Pages #

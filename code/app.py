@@ -1,11 +1,6 @@
 from flask import Flask, request, url_for, redirect, render_template
-from flask_frozen import Freezer
 
-app = Flask(__name__,template_folder="content/html") #name of the flask application
-app.config['FREEZER_DESTINATION'] = 'docs'
-#app.config['FREEZER_STATIC_IGNORE']='*'
-freezer = Freezer(app)
-
+app = Flask(__name__,template_folder="../content/html") #name of the flask application
 
 @app.route('/')
 def home(): 
@@ -18,5 +13,4 @@ def sample_post():
 
 if __name__ == '__main__':
   #app.run(host='0.0.0.0', port=3245, debug=True)
-  #app.run(debug=True)
-  freezer.freeze()
+  app.run(debug=True)
