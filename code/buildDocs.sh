@@ -24,9 +24,10 @@ export SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)
 ##############
 # BUILD DOCS #
 ##############
-which python
-ls /usr/bin/
+which python3
+#ls /usr/bin/
 dpkg -L python3
+echo $PATH
 ./code/freeze.py
  
 
