@@ -11,7 +11,7 @@ set -x
 ###################
  
 apt-get update
-apt-get -y install git rsync
+apt-get -y install git
  
 #####################
 # DECLARE VARIABLES #
