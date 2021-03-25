@@ -11,7 +11,8 @@ set -x
 ###################
  
 apt-get update
-apt-get -y install git python python3-frozen-flask 
+apt-get -y install git python python3-pip
+#python3-frozen-flask 
  
 #####################
 # DECLARE VARIABLES #
@@ -25,6 +26,7 @@ export SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)
 # BUILD DOCS #
 ##############
 which python
+pip3 --version
 ./code/freeze.py
  
 
