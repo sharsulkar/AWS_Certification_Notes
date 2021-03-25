@@ -11,7 +11,7 @@ set -x
 ###################
  
 apt-get update
-apt-get -y install git python
+apt-get -y install git python python3-frozen-flask 
  
 #####################
 # DECLARE VARIABLES #
