@@ -42,16 +42,12 @@ pwd
 docroot=`mktemp -d`
 rsync -a "docs" "${docroot}/"
 
-staticroot=`mktemp -d`
-rsync -a "content/static" "${staticroot}/"
-
 pushd "${docroot}"
-pushd "${staticroot}"
  
 # don't bother maintaining history; just generate fresh
-git init
-git remote add deploy "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-git checkout -b gh-pages
+#git init
+#git remote add deploy "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+#git checkout -b gh-pages
  
 # add .nojekyll to the root so that github won't 404 on content added to dirs
 # that start with an underscore (_), such as our "_content" dir..
@@ -66,7 +62,7 @@ msg="Updating Docs for commit ${GITHUB_SHA} made on `date -d"@${SOURCE_DATE_EPOC
 git commit -am "${msg}"
  
 # overwrite the contents of the gh-pages branch on our github.com repo
-git push deploy gh-pages --force
+git push gh-pages
  
 popd # return to main repo sandbox root
  
