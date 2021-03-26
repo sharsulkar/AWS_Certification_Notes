@@ -51,7 +51,7 @@ pushd "${docroot}"
  
 # add .nojekyll to the root so that github won't 404 on content added to dirs
 # that start with an underscore (_), such as our "_content" dir..
-touch .nojekyll
+#touch .nojekyll
  
  
 # copy the resulting html pages built from sphinx above to our new git repo
@@ -60,9 +60,12 @@ git add .
 # commit all the new files
 msg="Updating Docs for commit ${GITHUB_SHA} made on `date -d"@${SOURCE_DATE_EPOCH}" --iso-8601=seconds` from ${GITHUB_REF} by ${GITHUB_ACTOR}"
 git commit -am "${msg}"
- 
-# overwrite the contents of the gh-pages branch on our github.com repo
-git push gh-pages
+git push origin master
+
+# 
+git checkout gh-pages
+git rebase master
+git push origin gh-pages
  
 popd # return to main repo sandbox root
  
