@@ -39,10 +39,10 @@ git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
 pwd 
 
-docroot=`mktemp -d`
-rsync -a "docs" "${docroot}/"
+##docroot=`mktemp -d`
+##rsync -a "docs" "${docroot}/"
 
-pushd "${docroot}"
+##pushd "${docroot}"
  
 # don't bother maintaining history; just generate fresh
 #git init
@@ -55,7 +55,7 @@ git remote add deploy "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSIT
  
  
 # copy the resulting html pages built from sphinx above to our new git repo
-git add .
+#git add .
  
 # commit all the new files
 msg="Updating Docs for commit ${GITHUB_SHA} made on `date -d"@${SOURCE_DATE_EPOCH}" --iso-8601=seconds` from ${GITHUB_REF} by ${GITHUB_ACTOR}"
@@ -67,7 +67,7 @@ git checkout gh-pages
 git rebase main
 git push origin gh-pages
  
-popd # return to main repo sandbox root
+##popd # return to main repo sandbox root
  
 # exit cleanly
 exit 0
