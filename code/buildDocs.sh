@@ -41,8 +41,12 @@ pwd
 
 docroot=`mktemp -d`
 rsync -a "docs" "${docroot}/"
- 
+
+staticroot=`mktemp -d`
+rsync -a "content/static" "${staticroot}/"
+
 pushd "${docroot}"
+pushd "${staticroot}"
  
 # don't bother maintaining history; just generate fresh
 git init
