@@ -46,7 +46,7 @@ pushd "${docroot}"
  
 # don't bother maintaining history; just generate fresh
 #git init
-#git remote add deploy "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+git remote add deploy "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 #git checkout -b gh-pages
  
 # add .nojekyll to the root so that github won't 404 on content added to dirs
@@ -60,11 +60,11 @@ git add .
 # commit all the new files
 msg="Updating Docs for commit ${GITHUB_SHA} made on `date -d"@${SOURCE_DATE_EPOCH}" --iso-8601=seconds` from ${GITHUB_REF} by ${GITHUB_ACTOR}"
 git commit -am "${msg}"
-git push origin master
+git push origin main
 
 # 
 git checkout gh-pages
-git rebase master
+git rebase main
 git push origin gh-pages
  
 popd # return to main repo sandbox root
