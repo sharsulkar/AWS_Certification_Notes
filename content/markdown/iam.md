@@ -1,4 +1,11 @@
 # Identity and Access Management  
+**Service category:** Core Service > Access control  
+**Resiliency scope:** Region  
+**Service scope:** Global  
+**Service access:** Public  
+**Service model:** NA 
+**key words:**   
+
 ## AWS Account  
 * AWS Account is a container for identities and resources. It isolates resources and identities between different accounts and thus can localize impact of issues and security threats to a single account.  
 * Creating an account requires a unique email address and a credit card. Email address is used to create a root user and credit card is used a payment method for resources used. AWS is a pay-as-you-use service.  
@@ -13,7 +20,7 @@
 ### Authentication and Authorization  
 * IAM handles both of them  
 * The entity trying to access AWS resources is called a "principal".  
-* The principal has to prove to IAM that it is the identity it is claiming it to be by providing identity specific authentication details. It can be either a username and password for human identities or Access keys for CLI and non-human identities.  
+* The principal has to prove to IAM that it is the identity it is claiming it to be by providing identity specific authentication credentials. It can be either a username and password for human identities or Access keys for CLI and non-human identities.  
 * Once the principal authenticates successfully, it becomes a authenticated identity.  
 * AWS has a record of all the policies associated with this authenticated identity which it uses for authorizing access to the resources the identity is trying to access.  
 
@@ -47,4 +54,10 @@ If an identity has one or more policies attached to it or it is part of a group 
 ### Identity Management  
 #### IAM Users 
 * Identity used for anything requiring long term access to AWS resources. eg humans, applications and service accounts.  
-* 
+* **Can only have 5k IAM users per account** so cannot be used for internet-scale application with millions of users.  
+
+#### IAM Groups  
+* Containers for IAM users  
+* You cant login to IAM groups and they dont have separate credentials of their own  
+* They are used solely to organize IAM users for easy management  
+* **1 IAM user can be a member of 10 groups.**   
