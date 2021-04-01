@@ -60,4 +60,12 @@ If an identity has one or more policies attached to it or it is part of a group 
 * Containers for IAM users  
 * You cant login to IAM groups and they dont have separate credentials of their own  
 * They are used solely to organize IAM users for easy management  
+* Users can be part of multiple groups  
+* groups can have policies attached to them  
 * **1 IAM user can be a member of 10 groups.**   
+* **There is no limit on how many users are part of one group (so max users is 5k per account)**  
+* **300 groups per account soft limit but can be increased using a support ticket**  
+* **No group nesting - groups cannot be within groups, only users can be added in groups**  
+* **Resource policy CANNOT grant access to a group using ARN because group is not a true identity**  
+
+#### IAM Roles  
