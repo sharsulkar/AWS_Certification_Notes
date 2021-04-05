@@ -3,7 +3,7 @@
 **Resiliency scope:** Region  
 **Service scope:** Global  
 **Service access:** Public  
-**Service model:** NA 
+**Service model:** NA  
 **key words:**   
 
 ## AWS Account  
@@ -52,8 +52,8 @@ If an identity has one or more policies attached to it or it is part of a group 
     b. AWS managed  
 
 #### Permission Boundary  
-* Used for role delegation. 
 * The boundary limits what actions a particular role is authorized to do and it overrides any permission policy assigned to that role.  
+* Use case - Admin role delegation  
 
 ### Identity Management  
 #### IAM Users 
