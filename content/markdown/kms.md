@@ -49,7 +49,7 @@
 * Customer managed keys are more configurable.  
 * CMKs support key rotation. It cannot be disabled in AWS managed keys - the keys are automatically rotated once in 3 years.   
 * key rotation is optional in customer managed keys, if enabled, they are rotated once a year.  
-* CMKs support aliases  
+* CMKs support aliases - should be unique within a region  
 * every CMK has a key policy which is a resource policy. Customer managed CMKs can be modified.  
 * Unlike other AWS resources, **Key policy has to be explicitly told that keys trust the AWS account they are in.**  This way, the chain of trust is built - KMS is told to trust the account, the account trusts IAM so IAM roles and identities can be setup to use KMS to perform cryptographic operations.  
 
