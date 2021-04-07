@@ -20,7 +20,7 @@
 * algorithm = converts plaintext to/from ciphertext. common algorithms - Blowfish, AES, RC4, DES, RC5, RC6.  
 * key = password  
 * Ciphertext = encrypted data  
-* Symmetric encryption - same key used to encrypt and decrypt, good for encryption at rest, not good for encryption in transit.  
+* Symmetric encryption - same key used to encrypt and decrypt, good for encryption at rest, not good for encryption in transit or when encrpytion and decryption is performed by different parties.  
 * Asymmetric encryption - public key and private key. Public key can only be used for encryption, private key can only be used for decryption. Public key can be shared freely so everyone with access to it can encrypt. Private key needs to be guarded as only it can be used to decrypt.  
 * Signing - to prove identity using Asymmetric encryption. public key is used to verify whether a document was signed using its corresponding private key. private key is not required to be present when verifying signature.  
 
@@ -29,7 +29,7 @@
 * Create store and manage cryptographic keys and perform cryptographic operations  
 * can perform symmetric and asymmetirc encryption
 * Keys never leave KMS and the region where they are generated. Keys are also never stored in persistent memory without encryption  
-* **provides FIPS 140-2(L2) compliant service  
+* **provides FIPS 140-2(L2) compliant service**  
 * KMS manages Customer Master Keys (CMK). CMK is a logical container of physical key material  
 * CMK is made up of ID, date, policy, desc and state which is backed by physical key material  
 * physical key material can be generated or imported  
