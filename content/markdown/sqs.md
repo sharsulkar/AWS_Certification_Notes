@@ -36,6 +36,7 @@
   * guarantees at-least-one delivery(messages can be delivered more than once) but order of messages may or may not be maintained (like a multilane highway where messages can overtake each other)  
   * scales much better  
   * best used for decoupling architectures, batching items for future processing  
+ 
  **2. FIFO**  
   * guarantees exactly-one delivery and order is maintained (like a single lane road)  
   * 3000 messages/sec with batching, 300 messages/sec without  
