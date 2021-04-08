@@ -58,15 +58,15 @@
  *for RCU, the above calculation assumes trongly consistent reads, eventual consistent read operations require half the RCU calculated in step 2*  
 
 * Database triggers - event based database architecture   
- * Item changes generate stream events -> event contains what changed -> action is taken using lambda  
- * used in reporting and analytics, aggregation, messaging, notifications  
- * **Streams**  
- * time ordered list of item changes in a table - insert, updates and deletes  
- * over a 24 hour rolling window  
- * need to be enabled on a per table basis  
- * streams can be configured with 4 view types, decides what information is recorded in the stream  
-  1. KEYS_ONLY - stream will only record primary key of changed items  
-  2. NEW_IMAGE - records the entire item as it was after the change  
-  3. OLD_IMAGE - records the entire item as it was before the change  
-  4. NEW_AND_OLD_IMAGE - records the entire item as it was before and after the change  
- * 
+  * Item changes generate stream events -> event contains what changed -> action is taken using lambda  
+  * used in reporting and analytics, aggregation, messaging, notifications  
+  * **Streams**  
+  * time ordered list of item changes in a table - insert, updates and deletes  
+  * over a 24 hour rolling window  
+  * need to be enabled on a per table basis  
+  * streams can be configured with 4 view types, decides what information is recorded in the stream  
+   1. KEYS_ONLY - stream will only record primary key of changed items  
+   2. NEW_IMAGE - records the entire item as it was after the change  
+   3. OLD_IMAGE - records the entire item as it was before the change  
+   4. NEW_AND_OLD_IMAGE - records the entire item as it was before and after the change  
+  * 
