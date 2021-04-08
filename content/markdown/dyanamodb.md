@@ -28,7 +28,7 @@
   * **query** - have to specify only one partition key value, attributes can be filtered but you are billed for the capacity consumed by the entire item  
   * **scan** - very flexisble on what attribute is to be filtered on, but it scans all items in the table and thus you are billed for all items that are scanned, even if the data returned is filtered - so very expensive operation  
 
-* replication read consistency - 
+* **replication read consistency** - 
 * when can the writes to the table be reliably read from all replicated copies  
 * table is replicated over multiple AZs. each replica is called **storage node.** Out of all replicas, one is elected as leader node and is used for all writes. Reads can be from any storage note. If the primary fails, another one is elected in its place.    
   * **eventual consistent read** - 
@@ -52,7 +52,21 @@
     * when enabled, it keeps a record of all changes to the table over a 35 day rolling window  
     * data can be restored to any point in time with 1 sec granularity  
  
- * WCU and RCU capacity calculations
-  1. calculate capacity unit per item round(item_size/X) where X=1KB for write operation, X=4KB for read operation  
-  2. multiply by average read/write operations **per second**  
-  *for RCU, the above calculation assumes trongly consistent reads, eventual consistent read operations require half the RCU calculated in step 2*  
+* WCU and RCU capacity calculations
+ 1. calculate capacity unit per item round(item_size/X) where X=1KB for write operation, X=4KB for read operation  
+ 2. multiply by average read/write operations **per second**  
+ *for RCU, the above calculation assumes trongly consistent reads, eventual consistent read operations require half the RCU calculated in step 2*  
+
+* Database triggers - event based database architecture   
+ * Item changes generate stream events -> event contains what changed -> action is taken using lambda  
+ * used in reporting and analytics, aggregation, messaging, notifications  
+ * **Streams**  
+ * time ordered list of item changes in a table - insert, updates and deletes  
+ * over a 24 hour rolling window  
+ * need to be enabled on a per table basis  
+ * streams can be configured with 4 view types, decides what information is recorded in the stream  
+  1. KEYS_ONLY - stream will only record primary key of changed items  
+  2. NEW_IMAGE - records the entire item as it was after the change  
+  3. OLD_IMAGE - records the entire item as it was before the change  
+  4. NEW_AND_OLD_IMAGE - records the entire item as it was before and after the change  
+ * 
