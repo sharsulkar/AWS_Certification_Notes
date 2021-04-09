@@ -51,11 +51,20 @@
     * disabled by default, needs to be enabled per table  
     * when enabled, it keeps a record of all changes to the table over a 35 day rolling window  
     * data can be restored to any point in time with 1 sec granularity  
- 
+
+* Global tables  
+ * provides multi-master cross-region replication  
+ * to create a global table - create same table structure in mutiple regions and link all of them in one of the table in any region. This will create a global table with all these table copies designated as table replicas.  
+ * Data can be read from any of the replica and can be written to multiple replicas. Last writer wins is used for conflict resolution. Data is then replicated to all other replicas within seconds.  
+ * reads from the same region where data is written supports strongly consistent reads. All other regions can only do eventually consistent reads  
+
 * WCU and RCU capacity calculations
  1. calculate capacity unit per item round(item_size/X) where X=1KB for write operation, X=4KB for read operation  
  2. multiply by average read/write operations **per second**  
- *for RCU, the above calculation assumes trongly consistent reads, eventual consistent read operations require half the RCU calculated in step 2*  
+ *for RCU, the above calculation assumes strongly consistent reads, eventual consistent read operations require half the RCU calculated in step 2*  
+
+* Time to live  
+ * Amazon DynamoDB Time to Live (TTL) allows you to define a per-item timestamp to determine when an item is no longer needed. Shortly after the date and time of the specified timestamp, DynamoDB deletes the item from your table without consuming any write throughput. TTL is provided at no extra cost as a means to reduce stored data volumes by retaining only the items that remain current for your workload’s needs  
 
 * Database triggers - event based database architecture   
   * Item changes generate stream events -> event contains what changed -> action is taken using lambda  
@@ -69,4 +78,35 @@
    2. NEW_IMAGE - records the entire item as it was after the change  
    3. OLD_IMAGE - records the entire item as it was before the change  
    4. NEW_AND_OLD_IMAGE - records the entire item as it was before and after the change  
-  * 
+  
+* Indices  
+ * to improve data retreival performance and provide alternative way to apply data filters to query operation to overcome limitation of single partition key  
+ * indexes are sparse - only stores non-empty values in the index - consumes only that much storage capacity  
+ * 2 types of indexes -  
+  1. Local secondary index(LSI) -  
+   * alternative sort key can be defined, same partition key  
+   * must be created at the time of table creation  
+   * 5 LSI per table max  
+   * uses the same RCU and WCU for tables with provisioned capacity  
+   * attributes in LSI - ALL, Keys_only, include - select specific attributes  
+   * LSI are strongly consistent  
+  2. global secondary index(GSI) - 
+   * alternative partition and sort keys can be defined  
+   * can be creating at any time  
+   * default limit of 20 per table  
+   * needs their own RCU and WCU capacity allocations  
+   * attributes in GSI - ALL, Keys_only, include - select specific attributes  
+   * they have their own RCU and WCU allocation  
+   * GSI are always eventual consistent  
+
+* DyanamoDB Accelerator (DAX)  
+ * in-memory cache designed specifically for DynamoDB - using DAX SDK installed in the user application  
+ * does not consume RCUs for data read from cache - provides cost saving for frequently used data  
+ * cluster service that runs within a VPC (private service). nodes of the cluster run within different AZs  
+ * primary node - read/write. replica nodes - read only  
+ * 2 types of caches - 
+  * item cache - stores items that were recently read  
+  * query cache  - stores query/scan parameters that were used for recent reads  
+ * DAX is accessed via an endpoint  
+ * write-through is supported - data written in cache at the same time it is written in DyanamoDB  
+
