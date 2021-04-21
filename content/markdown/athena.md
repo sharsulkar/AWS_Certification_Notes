@@ -1,5 +1,5 @@
 # Amazon Athena  
-**Service category:** Storage > Database >   
+**Service category:** Analytics > adhoc-query > S3  
 **Resiliency scope:**   
 **Service scope:**   
 **Service access:**   
