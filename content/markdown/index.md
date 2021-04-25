@@ -8,6 +8,7 @@
 6. Encryption fundamentals  
 7. Serverless  
 8. CI/CD  
+9. API  
 
 ## AWS Services  
 ### Core Services  
