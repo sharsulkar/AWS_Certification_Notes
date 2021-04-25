@@ -6,7 +6,8 @@
 4. Identity federation  
 5. Containerization  
 6. Encryption fundamentals  
-7. Serverless 
+7. Serverless  
+8. CI/CD  
 
 ## AWS Services  
 ### Core Services  
