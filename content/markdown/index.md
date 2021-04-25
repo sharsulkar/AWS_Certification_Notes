@@ -9,7 +9,7 @@
 7. Serverless  
 8. CI/CD  
 9. API  
-10. architecture constraints - high availability, fault tolerent, low latency  
+10. architecture constraints - high availability, fault tolerent, low latency, cost optimization  
 
 ## AWS Services  
 ### Core Services  
