@@ -17,8 +17,8 @@
 * Build - convert the compiled software, dependencies and configurations into a stand-alone set of logic flow instructions that the underlying hardware can understand and act  
 * Deploy - process of passing instructions to the underlying hardware on how to use the built software  
 
-## Parameters for organizing software  
-* **Functional Modularity** - splitting the code into functionally distinct areas  
+## Architecture dimensions  
+* **Functional modularity** - splitting the code into functionally distinct areas  
 * **Functional coupling** - dependancy between different parts of the code within the same application  
-* **Resource hosting** - what type of hardware the functionality is deployed on  
+* **Resource hosting** - type and location of hardware the functionality is deployed on  
 
