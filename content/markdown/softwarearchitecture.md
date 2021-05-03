@@ -20,5 +20,5 @@
 ## Parameters for organizing software  
 * **Functional Modularity** - splitting the code into functionally distinct areas  
 * **Functional coupling** - dependancy between different parts of the code within the same application  
-* **Resource hosting** - what type of hardware the code is deployed on  
+* **Resource hosting** - what type of hardware the functionality is deployed on  
 
