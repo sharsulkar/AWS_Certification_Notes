@@ -20,5 +20,5 @@
 ## Architecture dimensions  
 * **Functional modularity** - splitting the code into functionally distinct areas  
 * **Functional coupling** - dependancy between different parts of the code within the same application  
-* **Resource hosting** - type and location of hardware the functionality is deployed on  
+* **Hardware ownership** - who owns and manages the hardware the functionality is deployed on  
 
