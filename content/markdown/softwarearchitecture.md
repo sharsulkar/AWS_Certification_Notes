@@ -21,4 +21,5 @@
 * **Functional modularity** - splitting the code into functionally distinct areas  
 * **Functional coupling** - dependancy between different parts of the code within the same application  
 * **Hardware ownership** - who owns and manages the hardware the functionality is deployed on  
+* **Non-functional considerations** - hardware capacity, high availability, fault tolerance, disaster recovery, scalability, cost optimization, security  
 
