@@ -93,4 +93,4 @@
 
 * ChangeSets - review updates to templates before executing them. Allows multiple changes to be stored independantly of each other and user can review each of them before applying updates  
 
-* 
+* Custom resources - used to add resources unsupported by CFN or to perform pre and post create/update/delete actions on resources that do not support bootstrapping/config sharing (eg deleting objects from S3 bucket before deleting it)  
