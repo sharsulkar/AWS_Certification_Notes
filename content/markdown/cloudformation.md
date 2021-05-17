@@ -67,3 +67,26 @@
     * Nested stack - modular templates - each module can be reused seperately  
     * Nested stack - entire nested stack is lifecycle linked  
     * Cross stack - individual stacks need to be created/updated/deleted seperately - resources has different lifecycles  
+
+* Stack sets -  
+  * deploy CFN stacks across many accounts and regions  
+  * Stacksets are containers in an admin accounts that contain stack instances which reference stacks. Stack instances and stacks are created within target accounts    
+  * if a stack fails to create, the stack instance remains and will hold information on that failure  
+  * security and access - self managed IAM roles or service managed using CFN + Organizations  
+  * template used to create stackset is a normal CFN template  
+  * Concurrent accounts - how many target accounts can the stackset deploy to in parallel  
+  * Failure tolerance - how many stacks can fail before the stackset is considered as failed  
+  * Retain stacks - when stack instances are deleted, the stack is also deleted. This setting allows stacks to be retained even if stack instances are deleted  
+
+* Deletion policy - 
+  * default behaviour of CFN is to delete physical resources when stack is deleted. This can cause data loss for storage devices. With deletion policy is defined on each resource which tells CFN what to do when resource is deleted. 
+  * 3 actions - Delete (default), retain or Snapshot (EBS volume, ElasticCache, Neptune, RDS, redshift). snapshot will incur storage cost and will need to be manually deleted  
+  * only applies to Delete operation, not to replace operation  
+
+* Stack roles - by default, CFN uses permissions of the logged in identity - user should have access to resources as well as CFN. But this does not allow role separation. Instead, an IAM role that has create/modify/delete access to resources can be passed when creating the stack which will ensure that the identity creating the stack can only be given limited access to create and maintain stacks and not actual resources.  
+
+* cfn-init - provide config information to EC2 (alternative to bootstrapping)  
+  * Only run once when the resource is first created. any updates to stack or metadata are not executed by init  
+  * config directives stored in template in the AWS::CloudFormation::Init part of the metadata for EC2 logical resource  
+  * directives describe desired state (user data/bootstrapping is procedural) so all directives should be idempotent (result in same resulting state if rerun multiple times)  
+  * cfn-hup - helper tool that has to be manually installed on the EC2 instance that monitors any resource metadata changes and runs cfn-init when it detects any  
