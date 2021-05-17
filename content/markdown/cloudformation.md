@@ -90,3 +90,7 @@
   * config directives stored in template in the AWS::CloudFormation::Init part of the metadata for EC2 logical resource  
   * directives describe desired state (user data/bootstrapping is procedural) so all directives should be idempotent (result in same resulting state if rerun multiple times)  
   * cfn-hup - helper tool that has to be manually installed on the EC2 instance that monitors any resource metadata changes and runs cfn-init when it detects any  
+
+* ChangeSets - review updates to templates before executing them. Allows multiple changes to be stored independantly of each other and user can review each of them before applying updates  
+
+* 
